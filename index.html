@@ -81,7 +81,8 @@
   const USER = "espenhk";
   const SELF = `${USER}.github.io`;
   const CACHE_KEY = "ghio:repos";
-  const CACHE_MS = 60 * 60 * 1000;
+  // Short enough that a newly enabled site shows up on the next visit.
+  const FRESH_MS = 2 * 60 * 1000;
 
   const statusEl = document.getElementById("status");
   const listEl = document.getElementById("sites");
@@ -89,7 +90,7 @@
   function readCache() {
     try {
       const hit = JSON.parse(localStorage.getItem(CACHE_KEY));
-      if (hit && Date.now() - hit.at < CACHE_MS) return hit.repos;
+      if (hit && Array.isArray(hit.repos)) return hit;
     } catch (e) {}
     return null;
   }
@@ -151,16 +152,22 @@
     statusEl.textContent = sites.length ? "" : "No Pages sites yet.";
   }
 
+  // Show the cached list at once, then refresh it, so a new site never waits on a stale cache.
   async function load() {
     const cached = readCache();
-    if (cached) return render(cached);
-    statusEl.hidden = false;
-    statusEl.textContent = "Loading…";
+    if (cached) {
+      render(cached.repos);
+      if (Date.now() - cached.at < FRESH_MS) return;
+    } else {
+      statusEl.hidden = false;
+      statusEl.textContent = "Loading…";
+    }
     try {
       const sites = toSites(await fetchRepos());
       writeCache(sites);
       render(sites);
     } catch (e) {
+      if (cached) return;
       statusEl.textContent = `Couldn't load the list: ${e.message}.`;
       const retry = document.createElement("button");
       retry.textContent = "Retry";
