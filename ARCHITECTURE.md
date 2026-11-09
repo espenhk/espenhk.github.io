@@ -9,14 +9,16 @@ links here; keep this file current when a repo's role or its publishing changes.
 |---|---|---|---|
 | `espenhk.github.io` | Landing page: lists every public repo with Pages on (GitHub API, in the browser) | `espenhk.github.io/` (its own Pages) | you |
 | `espenhk-portfolio` | Portfolio / CV (React, Lovable, Supabase CMS) | `espen.hk` via Lovable, not GitHub Pages | you, Lovable |
-| `espenhk-hobby-projects` | Independent hobby projects, shared Poetry env | `espenhk.github.io/espenhk-hobby-projects/` from `docs/` | you; CI bot for `docs/football-scheduler/` until #130 below |
+| `espenhk-hobby-projects` | Independent hobby projects, shared Poetry env | `espenhk.github.io/espenhk-hobby-projects/` from `docs/` | you |
+| `season-scheduler` | Football season fixture scheduler (Eliteserien + Toppserien); split out of the hobby repo | `espenhk.github.io/season-scheduler/`, report built and deployed by Actions | you |
 | `espenhk-skills` (private) | Claude skills; CI builds one ZIP per skill, installed by hand in the Claude app | nothing | you |
 | `brann-away` | Encrypted output of the `brann-away-trip` skill: no code, no CI | `espenhk.github.io/brann-away/` from the repo root | **only** the `brann-away-trip` skill |
 
 ```
    espenhk.github.io ── lists ──►  every public repo with Pages on
           ▲                         ├─ espenhk.github.io/brann-away/
-          │ linked from             └─ espenhk.github.io/espenhk-hobby-projects/
+          │ linked from             ├─ espenhk.github.io/espenhk-hobby-projects/
+          │                         └─ espenhk.github.io/season-scheduler/
    espen.hk (portfolio)
      repo list marks repos with a live page
 
@@ -30,7 +32,6 @@ links here; keep this file current when a repo's role or its publishing changes.
 
 1. **Each repo deploys only itself.** No workflow commits into another repo.
    Generated output isn't committed: build it in CI and deploy with Actions.
-   *Exception:* the hobby repo's football-scheduler report, until it moves out.
 2. **One cross-repo writer, on purpose:** the `brann-away-trip` skill pushes
    to `brann-away`, a content-only repo. Nothing else writes there, and
    it's never edited by hand. Its pages embed their own trip data, so
@@ -53,8 +54,6 @@ this rule, so they always agree.
 
 ## In progress
 
-- Move `football-scheduler` into its own repo, deployed with Actions:
-  [espenhk-hobby-projects#130](https://github.com/espenhk/espenhk-hobby-projects/issues/130).
 - Shared `design-sync` skill for pulling Claude Design systems into the other repos:
   [espenhk-skills#34](https://github.com/espenhk/espenhk-skills/issues/34).
 - Starfleet tokens in the portfolio:
