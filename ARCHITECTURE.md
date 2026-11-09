@@ -10,7 +10,7 @@ links here; keep this file current when a repo's role or its publishing changes.
 | `espenhk.github.io` | Landing page: lists every public repo with Pages on (GitHub API, in the browser) | `espenhk.github.io/` (its own Pages) | you |
 | `espenhk-portfolio` | Portfolio / CV (React, Lovable, Supabase CMS) | `espen.hk` via Lovable, not GitHub Pages | you, Lovable |
 | `espenhk-hobby-projects` | Independent hobby projects, shared Poetry env | `espenhk.github.io/espenhk-hobby-projects/` from `docs/` | you |
-| `season-scheduler` | Football season fixture scheduler (Eliteserien + Toppserien); split out of the hobby repo | `espenhk.github.io/season-scheduler/`, report built and deployed by Actions | you |
+| `season-scheduler` | Football season fixture scheduler (Eliteserien + Toppserien) | `espenhk.github.io/season-scheduler/`, report built and deployed by Actions | you |
 | `espenhk-skills` (private) | Claude skills; CI builds one ZIP per skill, installed by hand in the Claude app | nothing | you |
 | `brann-away` | Encrypted output of the `brann-away-trip` skill: no code, no CI | `espenhk.github.io/brann-away/` from the repo root | **only** the `brann-away-trip` skill |
 
