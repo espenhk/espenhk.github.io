@@ -5,66 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>espenhk</title>
 <meta name="description" content="Every GitHub Pages site published by espenhk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="design/tokens.css">
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #666666;
-    --border: #e0e0e0;
-    --card: #fafafa;
-    --accent: #2471a3;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14181c;
-      --fg: #eaeaea;
-      --muted: #9aa0a6;
-      --border: #2a2f34;
-      --card: #1a1f24;
-      --accent: #6fb3e0;
-    }
-  }
+  /* Colours, fonts and spacing come from Starfleet (design/tokens.css). */
   * { box-sizing: border-box; }
   body {
     margin: 0 auto;
-    padding: 2rem 16px 3rem;
-    max-width: 640px;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.4;
+    padding: var(--space-2xl) var(--space-lg) calc(var(--space-2xl) + var(--space-lg));
+    max-width: var(--container-narrow);
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    font-weight: var(--body-font-weight);
   }
-  h1 { font-size: 1.5rem; margin: 0 0 0.25rem; }
-  p.sub { color: var(--muted); margin: 0 0 2rem; }
+  h1 {
+    font-family: var(--display-section-font-family);
+    font-size: var(--display-section-font-size);
+    line-height: var(--display-section-line-height);
+    font-weight: var(--display-section-font-weight);
+    letter-spacing: var(--display-section-letter-spacing);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-xs);
+  }
+  p.sub { color: var(--text-secondary); margin: 0 0 var(--space-2xl); }
   ul { list-style: none; padding: 0; margin: 0; }
-  li + li { margin-top: 0.75rem; }
+  li + li { margin-top: var(--space-md); }
   a.card {
     display: block;
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--card);
+    padding: var(--space-lg);
+    border: 1px solid var(--card-edge);
+    border-radius: var(--radius-md);
+    background: var(--surface);
     text-decoration: none;
-    color: var(--fg);
+    color: var(--text-primary);
   }
   a.card:hover, a.card:focus-visible { border-color: var(--accent); }
-  a.card:active { background: var(--border); }
-  .name { font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; }
-  .desc { color: var(--muted); font-size: 0.9rem; margin-top: 0.2rem; }
-  .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.4rem; overflow-wrap: anywhere; }
-  .status { color: var(--muted); }
-  .status button {
-    font: inherit;
-    margin-left: 0.5rem;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--card);
-    color: var(--fg);
+  a.card:active { background: var(--accent-tint); }
+  .name {
+    font-family: var(--label-strong-font-family);
+    font-weight: var(--label-strong-font-weight);
+    font-size: var(--lead-font-size);
+    line-height: var(--label-strong-line-height);
+    overflow-wrap: anywhere;
   }
-  footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
-  footer a { color: var(--accent); }
+  .desc {
+    color: var(--text-secondary);
+    font-size: var(--small-font-size);
+    line-height: var(--small-line-height);
+    margin-top: var(--space-xs);
+  }
+  .meta {
+    color: var(--meta-ink);
+    font-family: var(--mono-meta-font-family);
+    font-size: var(--mono-meta-font-size);
+    line-height: var(--mono-meta-line-height);
+    margin-top: var(--space-tight);
+    overflow-wrap: anywhere;
+  }
+  .status { color: var(--text-secondary); }
+  .status button {
+    font-family: var(--button-font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    line-height: var(--button-line-height);
+    margin-left: var(--space-sm);
+    padding: var(--space-tight) var(--space-md);
+    border: 1px solid var(--control-edge);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text-primary);
+  }
+  footer {
+    margin-top: calc(var(--space-2xl) + var(--space-sm));
+    color: var(--text-secondary);
+    font-size: var(--small-font-size);
+    line-height: var(--small-line-height);
+  }
+  footer a { color: var(--accent-ink); }
+  code { font-family: var(--font-mono); font-size: 0.95em; }
 </style>
 </head>
 <body>
