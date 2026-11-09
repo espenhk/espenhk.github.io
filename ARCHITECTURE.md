@@ -22,7 +22,7 @@ links here; keep this file current when a repo's role or its publishing changes.
 
    espenhk-skills/brann-away-trip ── renders, encrypts, pushes ──► brann-away
    Claude Design systems ── synced one way ──► repos that use them
-     Starfleet → portfolio (more consumers planned)
+     Starfleet → portfolio, espenhk.github.io (more consumers planned)
      Bortebane → brann-away-trip templates
 ```
 
