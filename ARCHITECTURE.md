@@ -7,7 +7,7 @@ links here; keep this file current when a repo's role or its publishing changes.
 
 | Repo | What it is | Publishes to | Who writes to it |
 |---|---|---|---|
-| `espenhk.github.io` | Landing page: lists every public repo with Pages on (GitHub API, in the browser) | `espenhk.github.io/` (its own Pages) | you |
+| `espenhk.github.io` | Landing page: lists every public repo with Pages on (GitHub API, in the browser). Also hosts standalone pages in subfolders, e.g. `ki-strategi/` | `espenhk.github.io/` (its own Pages) | you |
 | `espenhk-portfolio` | Portfolio / CV (React, Lovable, Supabase CMS) | `espen.hk` via Lovable, not GitHub Pages | you, Lovable |
 | `espenhk-hobby-projects` | Independent hobby projects, shared Poetry env | `espenhk.github.io/espenhk-hobby-projects/` from `docs/` | you |
 | `season-scheduler` | Football season fixture scheduler (Eliteserien + Toppserien) | `espenhk.github.io/season-scheduler/`, report built and deployed by Actions | you |
