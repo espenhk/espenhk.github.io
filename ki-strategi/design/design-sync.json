@@ -1,0 +1,21 @@
+{
+  "_note": "Written by the design-sync skill. Do not edit; re-run the sync instead.",
+  "system": "Command",
+  "artifact": "https://claude.ai/artifact/8bAB4e7PjQZ5U7siYJaYeG",
+  "artifact_version": "1794986581-891e",
+  "tokens_version": 2,
+  "sha256": "c23c59305a9e0d6252522a7c0e4c9175e1efea5c10d19fcff2c6679457789254",
+  "synced": "2026-11-18",
+  "generator_version": 1,
+  "prefers_dark": true,
+  "outputs": [
+    {
+      "kind": "css",
+      "path": "tokens.css"
+    }
+  ],
+  "contrast": {
+    "min": 4.5,
+    "auto": true
+  }
+}
